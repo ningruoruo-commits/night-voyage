@@ -1,0 +1,17 @@
+{
+  "name": "orbit-lab-review-candidate",
+  "version": "0.1.2",
+  "private": true,
+  "license": "MIT",
+  "description": "Offline synthetic telemetry visualization with AI-assisted development",
+  "scripts": {
+    "build:preview": "node scripts/build-preview.cjs",
+    "test": "node tests/unit.cjs",
+    "test:single": "node tests/single-file.cjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  },
+  "author": "若若"
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+MIT License
+
+Copyright (c) 2026 若若
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>轨道实验室 · 独立模拟展示</title>
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js" defer></script>
+<script src="data.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<noscript>此独立模拟展示需要启用 JavaScript。没有任何后台数据连接。</noscript>
+<div class="crt"></div>
+<header><div class="brand"><i></i>ORBIT LAB</div><nav class="tabs" id="tabs"></nav><div class="clock" id="clock">—</div></header>
+<main class="hud">
+  <div class="panel" style="grid-area:a;--pc:#ff5f6d"><div class="sweep"></div><h3><span>机房哨兵 · house</span><em id="hsTag">—</em></h3><canvas class="pc" id="pHouse" title="检查结果为模拟数据；逐格亮光为显示动效，不代表正在重新执行检查"></canvas></div>
+  <div class="panel" style="grid-area:b;--pc:#7fc8ff"><div class="sweep"></div><h3><span>巡逻日志 · crawl log</span><em id="logRate">—</em></h3><div class="log" id="log" role="button" tabindex="0" aria-label="展开完整巡逻日志" title="点击查看完整日志"><div class="in" id="logIn"></div></div></div>
+  <div class="panel" style="grid-area:c;--pc:#ffd479"><div class="sweep"></div><h3><span>信号 · signal</span><em id="sigTag">demo</em></h3><canvas class="pc" id="pWave" title="四路模拟采样分别自动缩放；亮点与拖尾为读取动效，不代表新增采样，数值见下方"></canvas></div>
+  <div class="panel" style="grid-area:d;--pc:#ffb15e"><div class="sweep"></div><h3><span>节点资源 · memory</span><em id="memSum">—</em></h3><div class="bars" id="bars"></div></div>
+  <div class="hole" id="hole">
+    <canvas id="sky"></canvas>
+    <div class="focus"><h1 id="fTitle">00 <span>全部节点</span></h1><p id="fSub">night watch · 七个模拟节点</p><small id="fCoord">—</small></div>
+    <div class="badge" id="badge">—</div>
+    <div class="tip" id="tip"></div>
+    <details id="activityDetail" class="activity-detail"><summary>中心信标 · 24 小时节律</summary><p>两条虚构活动曲线</p><canvas id="activityChart" width="240" height="66"></canvas></details>
+    <aside id="processDetail" class="process-detail" hidden aria-live="polite"></aside>
+    <button class="wf-demo" id="soundToggle" style="right:228px" type="button" aria-pressed="false" title="轻量音效，默认静音">声音 · 关</button>
+    <button class="wf-demo" id="sentinelDemo" style="right:110px" type="button" title="只播放互动动画，仅改变本地动画">全景演示</button>
+    <button class="wf-demo" id="orbitSpeed" style="right:14px" type="button">巡游 ×6</button>
+  </div>
+  <div class="panel" style="grid-area:e;--pc:#dfe7ee"><div class="sweep"></div><h3><span>信标哨兵 · beacon</span><em id="xsTag">—</em></h3><canvas class="pc" id="pX"></canvas></div>
+  <div class="panel" style="grid-area:f;--pc:#6fe3b4"><div class="sweep"></div><h3><span>CPU · 负载分布</span><em>demo</em></h3><canvas class="pc" id="pRadar"></canvas></div>
+  <div class="panel" style="grid-area:g;--pc:#b59cff"><div class="sweep"></div><h3><span>节律热格</span><em id="heatSpan">15m</em></h3><canvas class="pc" id="pHeat"></canvas></div>
+  <div class="panel" style="grid-area:h;--pc:#e8774d"><div class="sweep"></div><h3><span>Rover · 行为动画</span><em class="r" id="fps">—</em></h3><div class="code" id="code" title="角色行为动画"></div></div>
+</main>
+<div class="ticker"><div class="tk" id="tk"></div></div>
+<dialog id="logDialog" class="log-dialog" aria-labelledby="logDialogTitle"><header><strong id="logDialogTitle">巡逻日志 · 完整文本</strong><button id="logClose" type="button">关闭</button></header><div id="logFull"></div></dialog>
+<canvas id="sentinelOverlay" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:8"></canvas>
+
+
+
+
+
+
+</body>
+</html>
