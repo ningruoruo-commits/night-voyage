@@ -1,0 +1,83 @@
+{
+  "browser": "155.0.8059.82",
+  "passed": 14,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "desktop startup and simulated workflow",
+      "status": "passed"
+    },
+    {
+      "name": "continuous canvas animation",
+      "status": "passed"
+    },
+    {
+      "name": "member selection, log dialog and panel enlargement",
+      "status": "passed"
+    },
+    {
+      "name": "audio opt-in, oscillator activity and off switch",
+      "status": "passed"
+    },
+    {
+      "name": "orbit-speed and scene-demo controls",
+      "status": "passed"
+    },
+    {
+      "name": "untrusted strings render as text; constructor names do not mutate prototypes",
+      "status": "passed"
+    },
+    {
+      "name": "bad data clears input, pending logs and visible text",
+      "status": "passed"
+    },
+    {
+      "name": "local input expires while offline and leaves no persisted state",
+      "status": "passed"
+    },
+    {
+      "name": "scene-demo finishes and can be replayed",
+      "status": "passed"
+    },
+    {
+      "name": "custom labels, model and color via configuration",
+      "status": "passed"
+    },
+    {
+      "name": "invalid configuration stops with a readable error",
+      "status": "passed"
+    },
+    {
+      "name": "offline cold start from local files",
+      "status": "passed"
+    },
+    {
+      "name": "mobile layout and reduced-motion preference",
+      "status": "passed"
+    },
+    {
+      "name": "requests confined to the five local runtime files",
+      "status": "passed"
+    }
+  ],
+  "network": {
+    "unexpectedRequests": 0,
+    "resources": [
+      "app.js",
+      "config.js",
+      "data.js",
+      "index.html",
+      "styles.css"
+    ]
+  },
+  "consoleErrors": [],
+  "screenshots": [
+    "desktop.png",
+    "instrument.png",
+    "mobile.png"
+  ],
+  "limitations": [
+    "Audio context and oscillators verified; perceived sound quality was not assessed.",
+    "Only Chromium was exercised."
+  ]
+}
