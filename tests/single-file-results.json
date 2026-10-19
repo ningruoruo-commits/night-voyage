@@ -1,0 +1,47 @@
+{
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "155.0.8059.82",
+      "passed": 9,
+      "checks": [
+        "offline single-file startup",
+        "continuous animation",
+        "selection, log and instrument dialogs",
+        "sound on and off",
+        "speed and scene controls",
+        "data markup stays literal in log, ticker, detail and tooltip",
+        "CSP permits runtime with no unexpected requests or errors",
+        "CSP rejects added script and outbound fetch",
+        "mobile offline layout"
+      ],
+      "errors": [],
+      "remoteRequests": 0,
+      "status": "passed"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "passed": 9,
+      "checks": [
+        "offline single-file startup",
+        "continuous animation",
+        "selection, log and instrument dialogs",
+        "sound on and off",
+        "speed and scene controls",
+        "data markup stays literal in log, ticker, detail and tooltip",
+        "CSP permits runtime with no unexpected requests or errors",
+        "CSP rejects added script and outbound fetch",
+        "mobile offline layout"
+      ],
+      "errors": [],
+      "remoteRequests": 0,
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Firefox is not installed; no software installed.",
+    "WebKit tests are not a Safari application certification.",
+    "Audio engine activity checked; perceived audio quality not assessed."
+  ]
+}
