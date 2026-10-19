@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('fs'),path=require('path'),crypto=require('crypto');
+const root=path.resolve(__dirname,'..');
+const read=n=>fs.readFileSync(path.join(root,n),'utf8');
+const scripts=['config.js','data.js','app.js'].map(read);
+if(scripts.some(s=>/<\/script/i.test(s))||/<\/style/i.test(read('styles.css')))throw Error('Unsafe inline closing tag');
+const hashes=scripts.map(s=>"'sha256-"+crypto.createHash('sha256').update(s).digest('base64')+"'").join(' ');
+let html=read('index.html').replace("script-src 'self'",'script-src '+hashes).replace("style-src 'self' 'unsafe-inline'","style-src 'unsafe-inline'");
+html=html.replace('<link rel="stylesheet" href="styles.css">','<style>'+read('styles.css')+'</style>');
+html=html.replace(/<script src="(?:config|data|app)\.js" defer><\/script>\n/g,'');
+html=html.replace('</body>',scripts.map(s=>'<script>'+s+'</script>').join('\n')+'\n</body>');
+fs.writeFileSync(path.join(root,'orbit-preview.html'),html);
+console.log('Built orbit-preview.html with three script hashes and connect-src none');
